@@ -1,18 +1,21 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 
 const gameSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: true
   },
   code: {
     type: String,
-    required: true,
+    required: true
   },
   points: {
-    type: Number,
+    type: Number
   },
+  img: {
+    type: String
+  }
 })
 
-const Game = mongoose.model("Game", gameSchema)
+const Game = mongoose.model('Game', gameSchema)
 module.exports = Game
