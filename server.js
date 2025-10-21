@@ -3,10 +3,11 @@ const logger = require("morgan")
 const cors = require("cors")
 
 const gameRouter = require("./routes/gameRouter")
+const playerRouter = require("./routes/playerRouter")
 
 const PORT = process.env.PORT || 3000
 
-const db = require('./db')
+const db = require("./db")
 
 const app = express()
 
@@ -15,8 +16,8 @@ app.use(logger("dev"))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-
 app.use("/games", gameRouter)
+app.use("/player", playerRouter)
 
 app.use("/", (req, res) => {
   res.send(`Connected!`)
